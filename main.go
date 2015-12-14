@@ -51,6 +51,22 @@ func main() {
 			Action: sync,
 		},
 		{
+			Name:      "vendor",
+			ShortName: "v",
+			Usage:     "vendor packages as submodules",
+			Flags: []cli.Flag{
+				cli.StringFlag{
+					Name:  "repo, r",
+					Value: ".",
+				},
+				cli.StringFlag{
+					Name:  "gopath, g",
+					Value: ".",
+				},
+			},
+			Action: vendor,
+		},
+		{
 			Name:      "fix",
 			ShortName: "f",
 			Usage:     "fix partially constructed submodules",
